@@ -1,0 +1,43 @@
+<idea-plugin>
+    <id>com.puyixiaowo.workbook</id>
+    <name>workbook</name>
+    <version>1.0</version>
+    <vendor email="ysdxz207@163.com" url="https://www.hupubao.win">hupubao</vendor>
+
+    <description><![CDATA[
+      Book reader.<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      1.0 version<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <project-components>
+        <component>
+            <implementation-class>com.hupubao.workbook.windows.Main</implementation-class>
+        </component>
+    </project-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!-- 自定义控制台输入
+        <toolWindow canCloseContents="true" anchor="right"
+                    id="WorkBook" icon="/icons/main_win.png"
+                    factoryClass="Main  </toolWindow>
+        -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
