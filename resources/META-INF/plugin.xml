@@ -5,7 +5,9 @@
     <vendor email="ysdxz207@163.com" url="https://www.hupubao.com">hupubao</vendor>
 
     <description><![CDATA[
-      Book reader.<br>
+      一个平时记录工作日志，邮件发周报的插件，用了poi，支持到2007，所以包比较大。
+       周报模版在：用户目录/workbook/template里。
+       在右侧工具栏里可以看到workbook的工具按钮。<br>
     ]]></description>
 
     <change-notes><![CDATA[
