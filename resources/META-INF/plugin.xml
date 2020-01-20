@@ -2,11 +2,15 @@
     <id>com.puyixiaowo.workbook</id>
     <name>workbook</name>
     <version>1.0</version>
-    <vendor email="ysdxz207@163.com" url="https://www.hupubao.com">hupubao</vendor>
+    <vendor email="ysdxz207@163.com" url="https://github.com/ysdxz207/workbook">hupubao</vendor>
 
     <description><![CDATA[
-      一个平时记录工作日志，邮件发周报的插件，用了poi，支持到2007，所以包比较大。
-       周报模版在：用户目录/workbook/template里。
+
+      A weekly report plugin.<br>
+      You can send an excel file and your weekly report content email to someone.<br>
+
+      一个平时记录工作日志，邮件发周报的插件，用了poi，支持到2007，所以包比较大。<br>
+       周报模版在：用户目录/workbook/template里。<br>
        在右侧工具栏里可以看到workbook的工具按钮。<br>
     ]]></description>
 
