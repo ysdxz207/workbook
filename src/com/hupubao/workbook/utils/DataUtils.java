@@ -317,14 +317,37 @@ public class DataUtils {
             sb.append(localNum ? i : dataRow.getId())
                     .append("、")
                     .append(dataRow.getContent());
-            if (StringUtils.isNotBlank(dataRow.getProblem())) {
 
-                sb.append("(")
-                        .append(dataRow.getProblem())
-                        .append(")");
-            }
             sb.append("[")
                     .append(dataRow.getWanchengdu().getDescription())
+                    .append("]")
+                    .append("\n");
+
+            i++;
+        }
+        sb.append("\n");
+        return sb.toString();
+    }
+
+    /**
+     * <h1>组装问题字符串内容</h1>
+     *
+     * @param dataRowList
+     * @param localNum    是否星期独立数字标号
+     * @return
+     */
+    private static String buildProblemStringByDataRowList(List<DataRow> dataRowList, boolean localNum) {
+        StringBuilder sb = new StringBuilder();
+        dataRowList.sort(Comparator.comparingInt(DataRow::getId));
+
+        int i = 1;
+        for (DataRow dataRow : dataRowList) {
+            if (dataRow.getWanchengdu().getPercent() == Wanchengdu.status.STOPING.percent) {
+                continue;
+            }
+
+            sb.append("[")
+                    .append(dataRow.getProblem())
                     .append("]")
                     .append("\n");
 
@@ -387,6 +410,16 @@ public class DataUtils {
         list.sort(Comparator.comparingInt(DataRow::getId));
 
         return list;
+    }
+
+    /**
+     * <h1>根据星期获取当天问题</h1>
+     *
+     * @param day
+     * @return
+     */
+    public static String buildProblemByDayOfWeek(int day) {
+        return buildProblemStringByDataRowList(getContentListByDayOfWeek(day), true);
     }
 
     public static String buildPercent(int day) {

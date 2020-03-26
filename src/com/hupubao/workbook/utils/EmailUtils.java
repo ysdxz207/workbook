@@ -100,10 +100,16 @@ public class EmailUtils {
                 }
                 for (int i = 1; i <= 7; i++) {
                     String dayKey = "${day" + i + "}";
+                    String problemKey = "${problem" + i + "}";
                     String percentKey = "${percent" + i + "}";
                     if (cell.getRichStringCellValue().getString().contains(dayKey)) {
                         cell.setCellValue(cell.getRichStringCellValue().getString().replace(dayKey,
                                 DataUtils.buildContentByDayOfWeek(i)));
+                    }
+
+                    if (cell.getRichStringCellValue().getString().contains(problemKey)) {
+                        cell.setCellValue(cell.getRichStringCellValue().getString().replace(dayKey,
+                                DataUtils.buildProblemByDayOfWeek(i)));
                     }
 
                     if (cell.getRichStringCellValue().getString().contains(percentKey)) {
