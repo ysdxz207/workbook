@@ -333,10 +333,9 @@ public class DataUtils {
      * <h1>组装问题字符串内容</h1>
      *
      * @param dataRowList
-     * @param localNum    是否星期独立数字标号
      * @return
      */
-    private static String buildProblemStringByDataRowList(List<DataRow> dataRowList, boolean localNum) {
+    private static String buildProblemStringByDataRowList(List<DataRow> dataRowList) {
         StringBuilder sb = new StringBuilder();
         dataRowList.sort(Comparator.comparingInt(DataRow::getId));
 
@@ -419,7 +418,7 @@ public class DataUtils {
      * @return
      */
     public static String buildProblemByDayOfWeek(int day) {
-        return buildProblemStringByDataRowList(getContentListByDayOfWeek(day), true);
+        return buildProblemStringByDataRowList(getContentListByDayOfWeek(day));
     }
 
     public static String buildPercent(int day) {
@@ -432,11 +431,4 @@ public class DataUtils {
         return percent + "%";
     }
 
-    public static void main(String[] args) {
-        int a = 20;
-        int b = 40;
-        int c = 30;
-
-        System.out.println(1.0d/3*(20.0d/100+40.0d/100+30.0d/100)*100);
-    }
 }

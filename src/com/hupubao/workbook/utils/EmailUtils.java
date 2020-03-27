@@ -22,7 +22,7 @@ import java.util.Properties;
 
 /**
  * @author Moses
- * @date 2017-11-01 10:53
+ * @date 2017-11-01
  */
 public class EmailUtils {
 
@@ -105,11 +105,13 @@ public class EmailUtils {
                     if (cell.getRichStringCellValue().getString().contains(dayKey)) {
                         cell.setCellValue(cell.getRichStringCellValue().getString().replace(dayKey,
                                 DataUtils.buildContentByDayOfWeek(i)));
+                        continue;
                     }
 
                     if (cell.getRichStringCellValue().getString().contains(problemKey)) {
-                        cell.setCellValue(cell.getRichStringCellValue().getString().replace(dayKey,
+                        cell.setCellValue(cell.getRichStringCellValue().getString().replace(problemKey,
                                 DataUtils.buildProblemByDayOfWeek(i)));
+                        continue;
                     }
 
                     if (cell.getRichStringCellValue().getString().contains(percentKey)) {
